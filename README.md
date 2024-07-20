@@ -5,6 +5,8 @@ company continues to grow. They demand an End-To-End Business Intelligence Solut
 to track and analyze their sales for a better decision-making.  
 
 
+
+
 Project Requirements: 
 
 Given OLTP Database, its required to: 
