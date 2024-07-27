@@ -1,0 +1,798 @@
+{
+  "create": {
+    "database": {
+      "name": "SSASProj_Karim Bassel_0409c9b0-7725-44a1-bf4d-8a260f93ee88",
+      "compatibilityLevel": 1200,
+      "model": {
+        "culture": "en-US",
+        "dataSources": [
+          {
+            "name": "SqlServer LAPTOP-6HO6SE43SSAS AdventureWorks-DW",
+            "connectionString": "Provider=SQLNCLI11;Data Source=LAPTOP-6HO6SE43\\SSAS;Initial Catalog=AdventureWorks-DW;Integrated Security=SSPI;Persist Security Info=false",
+            "impersonationMode": "impersonateServiceAccount",
+            "annotations": [
+              {
+                "name": "ConnectionEditUISource",
+                "value": "SqlServer"
+              }
+            ]
+          }
+        ],
+        "tables": [
+          {
+            "name": "DimCustomer",
+            "columns": [
+              {
+                "name": "CustomerKey",
+                "dataType": "int64",
+                "sourceColumn": "CustomerKey",
+                "sourceProviderType": "Integer"
+              },
+              {
+                "name": "CustomerAltKey",
+                "dataType": "int64",
+                "sourceColumn": "CustomerAltKey",
+                "sourceProviderType": "Integer"
+              },
+              {
+                "name": "CompanyName",
+                "dataType": "string",
+                "sourceColumn": "CompanyName",
+                "sourceProviderType": "WChar"
+              },
+              {
+                "name": "Name",
+                "dataType": "string",
+                "sourceColumn": "Name",
+                "sourceProviderType": "WChar"
+              },
+              {
+                "name": "Title",
+                "dataType": "string",
+                "sourceColumn": "Title",
+                "sourceProviderType": "WChar"
+              },
+              {
+                "name": "Phone",
+                "dataType": "string",
+                "isHidden": true,
+                "sourceColumn": "Phone",
+                "sourceProviderType": "WChar"
+              },
+              {
+                "name": "Email",
+                "dataType": "string",
+                "isHidden": true,
+                "sourceColumn": "Email",
+                "sourceProviderType": "WChar"
+              },
+              {
+                "name": "Address",
+                "dataType": "string",
+                "isHidden": true,
+                "sourceColumn": "Address",
+                "sourceProviderType": "WChar"
+              },
+              {
+                "name": "City",
+                "dataType": "string",
+                "sourceColumn": "City",
+                "sourceProviderType": "WChar"
+              },
+              {
+                "name": "State",
+                "dataType": "string",
+                "sourceColumn": "State",
+                "sourceProviderType": "WChar"
+              },
+              {
+                "name": "Country",
+                "dataType": "string",
+                "sourceColumn": "Country",
+                "sourceProviderType": "WChar"
+              }
+            ],
+            "partitions": [
+              {
+                "name": "DimCustomer",
+                "dataView": "full",
+                "source": {
+                  "type": "query",
+                  "query": " \t\t\t\tSELECT [dbo].[DimCustomer].*   FROM [dbo].[DimCustomer] ",
+                  "dataSource": "SqlServer LAPTOP-6HO6SE43SSAS AdventureWorks-DW"
+                }
+              }
+            ],
+            "annotations": [
+              {
+                "name": "_TM_ExtProp_QueryDefinition",
+                "value": " \t\t\t\tSELECT [dbo].[DimCustomer].*   FROM [dbo].[DimCustomer] "
+              },
+              {
+                "name": "_TM_ExtProp_DbTableName",
+                "value": "DimCustomer"
+              },
+              {
+                "name": "_TM_ExtProp_DbSchemaName",
+                "value": "dbo"
+              }
+            ]
+          },
+          {
+            "name": "DimProduct",
+            "columns": [
+              {
+                "name": "ProductKey",
+                "dataType": "int64",
+                "sourceColumn": "ProductKey",
+                "sourceProviderType": "Integer"
+              },
+              {
+                "name": "ProductAltKey",
+                "dataType": "int64",
+                "sourceColumn": "ProductAltKey",
+                "sourceProviderType": "Integer"
+              },
+              {
+                "name": "Model",
+                "dataType": "string",
+                "isHidden": true,
+                "sourceColumn": "Model",
+                "sourceProviderType": "WChar"
+              },
+              {
+                "name": "Category",
+                "dataType": "string",
+                "isHidden": true,
+                "sourceColumn": "Category",
+                "sourceProviderType": "WChar"
+              },
+              {
+                "name": "SubCategory",
+                "dataType": "string",
+                "isHidden": true,
+                "sourceColumn": "SubCategory",
+                "sourceProviderType": "WChar"
+              },
+              {
+                "name": "Description",
+                "dataType": "string",
+                "isHidden": true,
+                "sourceColumn": "Description",
+                "sourceProviderType": "WChar"
+              },
+              {
+                "name": "Size",
+                "dataType": "string",
+                "isHidden": true,
+                "sourceColumn": "Size",
+                "sourceProviderType": "WChar"
+              },
+              {
+                "name": "Color",
+                "dataType": "string",
+                "sourceColumn": "Color",
+                "sourceProviderType": "WChar"
+              },
+              {
+                "name": "Cost",
+                "dataType": "decimal",
+                "sourceColumn": "Cost",
+                "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+                "sourceProviderType": "Currency",
+                "annotations": [
+                  {
+                    "name": "Format",
+                    "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+                  }
+                ]
+              },
+              {
+                "name": "Price",
+                "dataType": "decimal",
+                "sourceColumn": "Price",
+                "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+                "sourceProviderType": "Currency",
+                "annotations": [
+                  {
+                    "name": "Format",
+                    "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+                  }
+                ]
+              }
+            ],
+            "partitions": [
+              {
+                "name": "DimProduct",
+                "dataView": "full",
+                "source": {
+                  "type": "query",
+                  "query": " \t\t\t\tSELECT [dbo].[DimProduct].*   FROM [dbo].[DimProduct] ",
+                  "dataSource": "SqlServer LAPTOP-6HO6SE43SSAS AdventureWorks-DW"
+                }
+              }
+            ],
+            "hierarchies": [
+              {
+                "name": "Product Hierarchy",
+                "levels": [
+                  {
+                    "name": "Category",
+                    "ordinal": 0,
+                    "column": "Category"
+                  },
+                  {
+                    "name": "SubCategory",
+                    "ordinal": 1,
+                    "column": "SubCategory"
+                  },
+                  {
+                    "name": "Model",
+                    "ordinal": 2,
+                    "column": "Model"
+                  }
+                ]
+              }
+            ],
+            "annotations": [
+              {
+                "name": "_TM_ExtProp_QueryDefinition",
+                "value": " \t\t\t\tSELECT [dbo].[DimProduct].*   FROM [dbo].[DimProduct] "
+              },
+              {
+                "name": "_TM_ExtProp_DbTableName",
+                "value": "DimProduct"
+              },
+              {
+                "name": "_TM_ExtProp_DbSchemaName",
+                "value": "dbo"
+              }
+            ]
+          },
+          {
+            "name": "FactSales",
+            "columns": [
+              {
+                "name": "DateKey",
+                "dataType": "int64",
+                "sourceColumn": "DateKey",
+                "sourceProviderType": "Integer"
+              },
+              {
+                "name": "CustomerKey",
+                "dataType": "int64",
+                "sourceColumn": "CustomerKey",
+                "sourceProviderType": "Integer"
+              },
+              {
+                "name": "ProductKey",
+                "dataType": "int64",
+                "sourceColumn": "ProductKey",
+                "sourceProviderType": "Integer"
+              },
+              {
+                "name": "SalesOrderID",
+                "dataType": "int64",
+                "sourceColumn": "SalesOrderID",
+                "sourceProviderType": "Integer"
+              },
+              {
+                "name": "SalesOrderDetailID",
+                "dataType": "int64",
+                "sourceColumn": "SalesOrderDetailID",
+                "sourceProviderType": "Integer"
+              },
+              {
+                "name": "OrderDate",
+                "dataType": "dateTime",
+                "sourceColumn": "OrderDate",
+                "formatString": "General Date",
+                "sourceProviderType": "DBTimeStamp"
+              },
+              {
+                "name": "Quantity",
+                "dataType": "int64",
+                "sourceColumn": "Quantity",
+                "sourceProviderType": "Integer"
+              },
+              {
+                "name": "UnitPrice",
+                "dataType": "decimal",
+                "sourceColumn": "UnitPrice",
+                "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+                "sourceProviderType": "Currency",
+                "annotations": [
+                  {
+                    "name": "Format",
+                    "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+                  }
+                ]
+              },
+              {
+                "name": "Discount",
+                "dataType": "decimal",
+                "isHidden": true,
+                "sourceColumn": "Discount",
+                "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+                "sourceProviderType": "Currency",
+                "annotations": [
+                  {
+                    "name": "Format",
+                    "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+                  }
+                ]
+              },
+              {
+                "name": "LineTotal",
+                "dataType": "decimal",
+                "sourceColumn": "LineTotal",
+                "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+                "sourceProviderType": "Currency",
+                "annotations": [
+                  {
+                    "name": "Format",
+                    "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+                  }
+                ]
+              }
+            ],
+            "partitions": [
+              {
+                "name": "FactSales",
+                "dataView": "full",
+                "source": {
+                  "type": "query",
+                  "query": " \t\t\t\tSELECT [dbo].[FactSales].*   FROM [dbo].[FactSales] ",
+                  "dataSource": "SqlServer LAPTOP-6HO6SE43SSAS AdventureWorks-DW"
+                }
+              }
+            ],
+            "annotations": [
+              {
+                "name": "_TM_ExtProp_QueryDefinition",
+                "value": " \t\t\t\tSELECT [dbo].[FactSales].*   FROM [dbo].[FactSales] "
+              },
+              {
+                "name": "_TM_ExtProp_DbTableName",
+                "value": "FactSales"
+              },
+              {
+                "name": "_TM_ExtProp_DbSchemaName",
+                "value": "dbo"
+              }
+            ]
+          },
+          {
+            "name": "DimDate",
+            "columns": [
+              {
+                "type": "calculatedTableColumn",
+                "name": "OrderDate",
+                "dataType": "dateTime",
+                "isNameInferred": true,
+                "isDataTypeInferred": true,
+                "sourceColumn": "[OrderDate]"
+              },
+              {
+                "type": "calculated",
+                "name": "Year",
+                "dataType": "int64",
+                "isDataTypeInferred": true,
+                "expression": " YEAR(DimDate[OrderDate])"
+              },
+              {
+                "type": "calculated",
+                "name": "Month",
+                "dataType": "int64",
+                "isDataTypeInferred": true,
+                "expression": " MONTH(DimDate[OrderDate])"
+              },
+              {
+                "type": "calculated",
+                "name": "Day",
+                "dataType": "int64",
+                "isDataTypeInferred": true,
+                "expression": " DAY(DimDate[OrderDate])"
+              },
+              {
+                "type": "calculated",
+                "name": "Quarter",
+                "dataType": "int64",
+                "isDataTypeInferred": true,
+                "expression": " QUARTER(DimDate[OrderDate])"
+              },
+              {
+                "type": "calculated",
+                "name": "Month Name",
+                "dataType": "string",
+                "isDataTypeInferred": true,
+                "expression": " FORMAT(DimDate[OrderDate], \"MMMM\")"
+              },
+              {
+                "type": "calculated",
+                "name": "Day Name",
+                "dataType": "string",
+                "isDataTypeInferred": true,
+                "expression": " FORMAT(DimDate[OrderDate], \"dddd\")"
+              },
+              {
+                "type": "calculated",
+                "name": "Week Number",
+                "dataType": "int64",
+                "isDataTypeInferred": true,
+                "expression": " WEEKNUM(DimDate[OrderDate])"
+              },
+              {
+                "type": "calculated",
+                "name": "DateKey",
+                "dataType": "int64",
+                "isDataTypeInferred": true,
+                "expression": "YEAR(DimDate[OrderDate]) * 10000 + MONTH(DimDate[OrderDate]) * 100 + DAY(DimDate[OrderDate])"
+              }
+            ],
+            "partitions": [
+              {
+                "name": "CalculatedTable 1",
+                "source": {
+                  "type": "calculated",
+                  "expression": "DISTINCT(SELECTCOLUMNS(FactSales, \"OrderDate\", FactSales[OrderDate]))"
+                }
+              }
+            ],
+            "hierarchies": [
+              {
+                "name": "Calendar Hierarchy",
+                "levels": [
+                  {
+                    "name": "Year",
+                    "ordinal": 0,
+                    "column": "Year"
+                  },
+                  {
+                    "name": "Day",
+                    "ordinal": 1,
+                    "column": "Day"
+                  },
+                  {
+                    "name": "Quarter",
+                    "ordinal": 2,
+                    "column": "Quarter"
+                  },
+                  {
+                    "name": "Month",
+                    "ordinal": 3,
+                    "column": "Month"
+                  },
+                  {
+                    "name": "OrderDate",
+                    "ordinal": 4,
+                    "column": "OrderDate"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "name": "d618eeae-03ab-42b0-8352-b59ae8ad1b54",
+            "fromTable": "FactSales",
+            "fromColumn": "DateKey",
+            "toTable": "DimDate",
+            "toColumn": "DateKey",
+            "crossFilteringBehavior": "bothDirections"
+          },
+          {
+            "name": "43dc42e5-0008-4dd2-9b2e-8fcec27b8070",
+            "fromTable": "FactSales",
+            "fromColumn": "CustomerKey",
+            "toTable": "DimCustomer",
+            "toColumn": "CustomerAltKey",
+            "crossFilteringBehavior": "bothDirections"
+          },
+          {
+            "name": "1513259b-9633-411f-9cfd-07541adfb4d3",
+            "fromTable": "FactSales",
+            "fromColumn": "ProductKey",
+            "toTable": "DimProduct",
+            "toColumn": "ProductAltKey",
+            "crossFilteringBehavior": "bothDirections"
+          }
+        ],
+        "cultures": [
+          {
+            "name": "ar-EG",
+            "translations": {
+              "model": {
+                "name": "Model",
+                "tables": [
+                  {
+                    "name": "DimCustomer",
+                    "columns": [
+                      {
+                        "name": "Name",
+                        "translatedCaption": "الاسم"
+                      },
+                      {
+                        "name": "Title",
+                        "translatedCaption": "عنوان"
+                      },
+                      {
+                        "name": "Phone",
+                        "translatedCaption": "رقم"
+                      },
+                      {
+                        "name": "Email",
+                        "translatedCaption": "البريد الكتروني"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "perspectives": [
+          {
+            "name": "Companies Owners",
+            "tables": [
+              {
+                "name": "DimCustomer",
+                "columns": [
+                  {
+                    "name": "City"
+                  },
+                  {
+                    "name": "Country"
+                  },
+                  {
+                    "name": "State"
+                  },
+                  {
+                    "name": "Title"
+                  },
+                  {
+                    "name": "CustomerAltKey"
+                  }
+                ]
+              },
+              {
+                "name": "DimDate",
+                "columns": [
+                  {
+                    "name": "DateKey"
+                  },
+                  {
+                    "name": "Day"
+                  },
+                  {
+                    "name": "Day Name"
+                  },
+                  {
+                    "name": "Month"
+                  },
+                  {
+                    "name": "Month Name"
+                  },
+                  {
+                    "name": "OrderDate"
+                  },
+                  {
+                    "name": "Quarter"
+                  },
+                  {
+                    "name": "Week Number"
+                  },
+                  {
+                    "name": "Year"
+                  }
+                ],
+                "hierarchies": [
+                  {
+                    "name": "Calendar Hierarchy"
+                  }
+                ]
+              },
+              {
+                "name": "DimProduct",
+                "columns": [
+                  {
+                    "name": "Category"
+                  },
+                  {
+                    "name": "Model"
+                  },
+                  {
+                    "name": "SubCategory"
+                  },
+                  {
+                    "name": "ProductAltKey"
+                  }
+                ]
+              },
+              {
+                "name": "FactSales",
+                "columns": [
+                  {
+                    "name": "LineTotal"
+                  },
+                  {
+                    "name": "CustomerKey"
+                  },
+                  {
+                    "name": "DateKey"
+                  },
+                  {
+                    "name": "ProductKey"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Adventure Works Management",
+            "tables": [
+              {
+                "name": "DimCustomer",
+                "columns": [
+                  {
+                    "name": "Address"
+                  },
+                  {
+                    "name": "City"
+                  },
+                  {
+                    "name": "CompanyName"
+                  },
+                  {
+                    "name": "Country"
+                  },
+                  {
+                    "name": "CustomerAltKey"
+                  },
+                  {
+                    "name": "CustomerKey"
+                  },
+                  {
+                    "name": "Email"
+                  },
+                  {
+                    "name": "Name"
+                  },
+                  {
+                    "name": "Phone"
+                  },
+                  {
+                    "name": "State"
+                  },
+                  {
+                    "name": "Title"
+                  }
+                ]
+              },
+              {
+                "name": "DimDate",
+                "columns": [
+                  {
+                    "name": "DateKey"
+                  },
+                  {
+                    "name": "Day"
+                  },
+                  {
+                    "name": "Day Name"
+                  },
+                  {
+                    "name": "Month"
+                  },
+                  {
+                    "name": "Month Name"
+                  },
+                  {
+                    "name": "OrderDate"
+                  },
+                  {
+                    "name": "Quarter"
+                  },
+                  {
+                    "name": "Week Number"
+                  },
+                  {
+                    "name": "Year"
+                  }
+                ],
+                "hierarchies": [
+                  {
+                    "name": "Calendar Hierarchy"
+                  }
+                ]
+              },
+              {
+                "name": "DimProduct",
+                "columns": [
+                  {
+                    "name": "Category"
+                  },
+                  {
+                    "name": "Color"
+                  },
+                  {
+                    "name": "Cost"
+                  },
+                  {
+                    "name": "Description"
+                  },
+                  {
+                    "name": "Model"
+                  },
+                  {
+                    "name": "Price"
+                  },
+                  {
+                    "name": "ProductAltKey"
+                  },
+                  {
+                    "name": "ProductKey"
+                  },
+                  {
+                    "name": "Size"
+                  },
+                  {
+                    "name": "SubCategory"
+                  }
+                ],
+                "hierarchies": [
+                  {
+                    "name": "Product Hierarchy"
+                  }
+                ]
+              },
+              {
+                "name": "FactSales",
+                "columns": [
+                  {
+                    "name": "CustomerKey"
+                  },
+                  {
+                    "name": "DateKey"
+                  },
+                  {
+                    "name": "Discount"
+                  },
+                  {
+                    "name": "LineTotal"
+                  },
+                  {
+                    "name": "OrderDate"
+                  },
+                  {
+                    "name": "ProductKey"
+                  },
+                  {
+                    "name": "Quantity"
+                  },
+                  {
+                    "name": "SalesOrderDetailID"
+                  },
+                  {
+                    "name": "SalesOrderID"
+                  },
+                  {
+                    "name": "UnitPrice"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "ClientCompatibilityLevel",
+            "value": "400"
+          }
+        ]
+      }
+    }
+  }
+}
+
